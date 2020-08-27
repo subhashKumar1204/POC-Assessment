@@ -61,15 +61,15 @@
 		81A88C10A3A87F5E7782978D /* Pods-POC-POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC-POCUITests.release.xcconfig"; path = "Target Support Files/Pods-POC-POCUITests/Pods-POC-POCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86064025C5D918ED11549E4C /* Pods-POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC.release.xcconfig"; path = "Target Support Files/Pods-POC/Pods-POC.release.xcconfig"; sourceTree = "<group>"; };
 		B7ACB367EF873879C8DB6AD1 /* Pods-POCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POCTests.release.xcconfig"; path = "Target Support Files/Pods-POCTests/Pods-POCTests.release.xcconfig"; sourceTree = "<group>"; };
-		BFCFBE3324F7962900A4B236 /* POC Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "POC Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCFBE3324F7962900A4B236 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCFBE3624F7962900A4B236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFCFBE3F24F7962E00A4B236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCFBE4224F7962E00A4B236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFCFBE4424F7962E00A4B236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFCFBE4924F7962E00A4B236 /* POC AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "POC AssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCFBE4924F7962E00A4B236 /* POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCFBE4D24F7962E00A4B236 /* POCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCTests.swift; sourceTree = "<group>"; };
 		BFCFBE4F24F7962E00A4B236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFCFBE5424F7962E00A4B236 /* POC AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "POC AssessmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCFBE5424F7962E00A4B236 /* POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCFBE5824F7962E00A4B236 /* POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCUITests.swift; sourceTree = "<group>"; };
 		BFCFBE5A24F7962E00A4B236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCFBE6B24F7A08700A4B236 /* InformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,9 +161,9 @@
 		BFCFBE3424F7962900A4B236 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BFCFBE3324F7962900A4B236 /* POC Assessment.app */,
-				BFCFBE4924F7962E00A4B236 /* POC AssessmentTests.xctest */,
-				BFCFBE5424F7962E00A4B236 /* POC AssessmentUITests.xctest */,
+				BFCFBE3324F7962900A4B236 /* POC.app */,
+				BFCFBE4924F7962E00A4B236 /* POCTests.xctest */,
+				BFCFBE5424F7962E00A4B236 /* POCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -291,9 +291,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BFCFBE3224F7962900A4B236 /* POC Assessment */ = {
+		BFCFBE3224F7962900A4B236 /* POC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFCFBE5D24F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC Assessment" */;
+			buildConfigurationList = BFCFBE5D24F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC" */;
 			buildPhases = (
 				588F04450283DD3B32A179A6 /* [CP] Check Pods Manifest.lock */,
 				BFCFBE2F24F7962900A4B236 /* Sources */,
@@ -305,14 +305,14 @@
 			);
 			dependencies = (
 			);
-			name = "POC Assessment";
+			name = POC;
 			productName = POC;
-			productReference = BFCFBE3324F7962900A4B236 /* POC Assessment.app */;
+			productReference = BFCFBE3324F7962900A4B236 /* POC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BFCFBE4824F7962E00A4B236 /* POC AssessmentTests */ = {
+		BFCFBE4824F7962E00A4B236 /* POCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFCFBE6024F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC AssessmentTests" */;
+			buildConfigurationList = BFCFBE6024F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POCTests" */;
 			buildPhases = (
 				0C01B984CC144AD4EED5B47E /* [CP] Check Pods Manifest.lock */,
 				BFCFBE4524F7962E00A4B236 /* Sources */,
@@ -324,14 +324,14 @@
 			dependencies = (
 				BFCFBE4B24F7962E00A4B236 /* PBXTargetDependency */,
 			);
-			name = "POC AssessmentTests";
+			name = POCTests;
 			productName = POCTests;
-			productReference = BFCFBE4924F7962E00A4B236 /* POC AssessmentTests.xctest */;
+			productReference = BFCFBE4924F7962E00A4B236 /* POCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BFCFBE5324F7962E00A4B236 /* POC AssessmentUITests */ = {
+		BFCFBE5324F7962E00A4B236 /* POCUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BFCFBE6324F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC AssessmentUITests" */;
+			buildConfigurationList = BFCFBE6324F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POCUITests" */;
 			buildPhases = (
 				21AD4A9E4BD10A420DD51E76 /* [CP] Check Pods Manifest.lock */,
 				BFCFBE5024F7962E00A4B236 /* Sources */,
@@ -344,9 +344,9 @@
 			dependencies = (
 				BFCFBE5624F7962E00A4B236 /* PBXTargetDependency */,
 			);
-			name = "POC AssessmentUITests";
+			name = POCUITests;
 			productName = POCUITests;
-			productReference = BFCFBE5424F7962E00A4B236 /* POC AssessmentUITests.xctest */;
+			productReference = BFCFBE5424F7962E00A4B236 /* POCUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -372,7 +372,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BFCFBE2E24F7962900A4B236 /* Build configuration list for PBXProject "POC Assessment" */;
+			buildConfigurationList = BFCFBE2E24F7962900A4B236 /* Build configuration list for PBXProject "POC" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -385,9 +385,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BFCFBE3224F7962900A4B236 /* POC Assessment */,
-				BFCFBE4824F7962E00A4B236 /* POC AssessmentTests */,
-				BFCFBE5324F7962E00A4B236 /* POC AssessmentUITests */,
+				BFCFBE3224F7962900A4B236 /* POC */,
+				BFCFBE4824F7962E00A4B236 /* POCTests */,
+				BFCFBE5324F7962E00A4B236 /* POCUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -570,12 +570,12 @@
 /* Begin PBXTargetDependency section */
 		BFCFBE4B24F7962E00A4B236 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFCFBE3224F7962900A4B236 /* POC Assessment */;
+			target = BFCFBE3224F7962900A4B236 /* POC */;
 			targetProxy = BFCFBE4A24F7962E00A4B236 /* PBXContainerItemProxy */;
 		};
 		BFCFBE5624F7962E00A4B236 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BFCFBE3224F7962900A4B236 /* POC Assessment */;
+			target = BFCFBE3224F7962900A4B236 /* POC */;
 			targetProxy = BFCFBE5524F7962E00A4B236 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -718,7 +718,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Subhash.POC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = POC;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -736,7 +736,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Subhash.POC;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = POC;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -760,7 +760,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POC Assessment.app/POC Assessment";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POC.app/POC";
 			};
 			name = Debug;
 		};
@@ -782,7 +782,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POC Assessment.app/POC Assessment";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/POC.app/POC";
 			};
 			name = Release;
 		};
@@ -829,7 +829,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BFCFBE2E24F7962900A4B236 /* Build configuration list for PBXProject "POC Assessment" */ = {
+		BFCFBE2E24F7962900A4B236 /* Build configuration list for PBXProject "POC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFCFBE5B24F7962E00A4B236 /* Debug */,
@@ -838,7 +838,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFCFBE5D24F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC Assessment" */ = {
+		BFCFBE5D24F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFCFBE5E24F7962E00A4B236 /* Debug */,
@@ -847,7 +847,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFCFBE6024F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC AssessmentTests" */ = {
+		BFCFBE6024F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFCFBE6124F7962E00A4B236 /* Debug */,
@@ -856,7 +856,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BFCFBE6324F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POC AssessmentUITests" */ = {
+		BFCFBE6324F7962E00A4B236 /* Build configuration list for PBXNativeTarget "POCUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BFCFBE6424F7962E00A4B236 /* Debug */,
