@@ -18,25 +18,24 @@ class DashboardViewModel {
         self.dataSource = dataSource
     }
     
-    //RequestService to fetch dashboard data
+    //Request Service to fetch dashboard data
     func fetchDashboardData()  {
         Loader.showLoader()
-       
-        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { [weak self] result in
             
             switch result {
             case let .success(response):
-                self.title = response.data?.title ?? ""
+                self?.title = response.data?.title ?? ""
                 if let informations = (response.data?.rows) {
-                    self.dataSource?.data.value  = informations.map({return AboutCanadaViewModel(canadaInfo: $0)})
+                    self?.dataSource?.data.value  = informations.map({return AboutCanadaViewModel(canadaInfo: $0)})
                 }
                 else{
-                    self.dataSource?.data.value = []
+                    self?.dataSource?.data.value = []
                 }
                 Loader.dismissLoader()
 
             case .failure:
-                self.onErrorHandling?(APIError.invalidResponse)
+                self?.onErrorHandling?(APIError.invalidResponse)
                 break
             }
         }
