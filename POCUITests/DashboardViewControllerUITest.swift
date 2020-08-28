@@ -38,7 +38,7 @@ class DashboardViewControllerUITest: XCTestCase {
         let tableView = app.tables.containing(.table, identifier: "DashboardInfoTableView")
         let cell = tableView.cells.containing(.cell, identifier: "InfoTableViewcell")
         //checking tableview is created and number of cell is more than Zero or not
-        XCTAssertGreaterThan(cell.count, 1)
+        XCTAssertGreaterThan(cell.count, 0)
 
     }
 
