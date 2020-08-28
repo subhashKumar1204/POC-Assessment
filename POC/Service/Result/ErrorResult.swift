@@ -12,6 +12,7 @@ public enum APIError: Error {
     case noInternetConnection
     case sessionExpired
     case invalidRequest
+    case invalidURL
     case invalidResponse
     case parsingError
     case needRetry
@@ -19,14 +20,15 @@ public enum APIError: Error {
     func localizedDescription() -> String {
         switch self {
         case .noInternetConnection:
-            return "Sorry we are unable to connect to internet now. please check your network connection"
+            return "Sorry we are unable to connect the server. Please check your network connection"
         case .invalidRequest:
-            return "Problem with network request. please try later"
+            return "Problem with network request. Please try later"
         case .parsingError:
-            return "Unable to parse the server response. please try later"
-            
+            return "Unable to parse the server response. Please try later"
+        case .invalidURL:
+                return "Problem with network request URL. Please try later"
         default:
-            return "Something went wrong. please try later"
+            return "Something went wrong. Please try later"
         }
     }
     

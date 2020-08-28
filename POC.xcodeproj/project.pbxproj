@@ -10,10 +10,12 @@
 		10E1BF650BC951E82A4C2096 /* Pods_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6013C109D0EF4411EC8BD385 /* Pods_POC.framework */; };
 		8A4C7F93AA147D9CE29996D3 /* Pods_POCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F1A20E26EB1E6104F44F8E /* Pods_POCTests.framework */; };
 		B456C624A1E2786C1D32C3A4 /* Pods_POC_POCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB59F046F510EA0D9D01F32 /* Pods_POC_POCUITests.framework */; };
+		BF4A5A6E24F93FB2006672A6 /* AboutCanadaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A5A6D24F93FB2006672A6 /* AboutCanadaViewModel.swift */; };
+		BF4A5A7024F94196006672A6 /* DashboardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A5A6F24F94196006672A6 /* DashboardViewModelTests.swift */; };
+		BF4A5A7224F944C7006672A6 /* AboutCanada.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A5A7124F944C7006672A6 /* AboutCanada.swift */; };
 		BFCFBE3724F7962900A4B236 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE3624F7962900A4B236 /* AppDelegate.swift */; };
 		BFCFBE4024F7962E00A4B236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCFBE3F24F7962E00A4B236 /* Assets.xcassets */; };
 		BFCFBE4324F7962E00A4B236 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFCFBE4124F7962E00A4B236 /* LaunchScreen.storyboard */; };
-		BFCFBE4E24F7962E00A4B236 /* POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE4D24F7962E00A4B236 /* POCTests.swift */; };
 		BFCFBE5924F7962E00A4B236 /* POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE5824F7962E00A4B236 /* POCUITests.swift */; };
 		BFCFBE6C24F7A08700A4B236 /* InformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE6B24F7A08700A4B236 /* InformationTableViewCell.swift */; };
 		BFCFBE6F24F7A45B00A4B236 /* CanadaInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE6E24F7A45B00A4B236 /* CanadaInfomation.swift */; };
@@ -21,14 +23,14 @@
 		BFCFBE7724F7AD0E00A4B236 /* DashboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE7624F7AD0E00A4B236 /* DashboardDataSource.swift */; };
 		BFCFBE7924F7AD7A00A4B236 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE7824F7AD7A00A4B236 /* DashboardViewController.swift */; };
 		BFCFBE7B24F7B73800A4B236 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE7A24F7B73800A4B236 /* DashboardViewModel.swift */; };
-		BFCFBE8124F7BACD00A4B236 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE8024F7BACD00A4B236 /* Network.swift */; };
+		BFCFBE8124F7BACD00A4B236 /* POCHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE8024F7BACD00A4B236 /* POCHttpClient.swift */; };
 		BFCFBE8C24F7BD9100A4B236 /* ParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE8B24F7BD9100A4B236 /* ParserHelper.swift */; };
 		BFCFBE8F24F7C03700A4B236 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE8E24F7C03700A4B236 /* Result.swift */; };
 		BFCFBE9124F7C08700A4B236 /* ErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9024F7C08700A4B236 /* ErrorResult.swift */; };
 		BFCFBE9324F7C0B600A4B236 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9224F7C0B600A4B236 /* Response.swift */; };
 		BFCFBE9524F7C0E800A4B236 /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9424F7C0E700A4B236 /* RequestFactory.swift */; };
 		BFCFBE9724F7C10700A4B236 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9624F7C10700A4B236 /* Constant.swift */; };
-		BFCFBE9924F7C22D00A4B236 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9824F7C22D00A4B236 /* ServiceManager.swift */; };
+		BFCFBE9924F7C22D00A4B236 /* POCServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9824F7C22D00A4B236 /* POCServiceManager.swift */; };
 		BFCFBE9B24F7C27300A4B236 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9A24F7C27300A4B236 /* RequestService.swift */; };
 		BFCFBE9F24F7E29D00A4B236 /* ServerEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBE9E24F7E29D00A4B236 /* ServerEndpoints.swift */; };
 		BFCFBEA424F7F61500A4B236 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCFBEA324F7F61500A4B236 /* BaseViewController.swift */; };
@@ -61,13 +63,15 @@
 		81A88C10A3A87F5E7782978D /* Pods-POC-POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC-POCUITests.release.xcconfig"; path = "Target Support Files/Pods-POC-POCUITests/Pods-POC-POCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		86064025C5D918ED11549E4C /* Pods-POC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC.release.xcconfig"; path = "Target Support Files/Pods-POC/Pods-POC.release.xcconfig"; sourceTree = "<group>"; };
 		B7ACB367EF873879C8DB6AD1 /* Pods-POCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POCTests.release.xcconfig"; path = "Target Support Files/Pods-POCTests/Pods-POCTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF4A5A6D24F93FB2006672A6 /* AboutCanadaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCanadaViewModel.swift; sourceTree = "<group>"; };
+		BF4A5A6F24F94196006672A6 /* DashboardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModelTests.swift; sourceTree = "<group>"; };
+		BF4A5A7124F944C7006672A6 /* AboutCanada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCanada.swift; sourceTree = "<group>"; };
 		BFCFBE3324F7962900A4B236 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCFBE3624F7962900A4B236 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFCFBE3F24F7962E00A4B236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFCFBE4224F7962E00A4B236 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFCFBE4424F7962E00A4B236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCFBE4924F7962E00A4B236 /* POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFCFBE4D24F7962E00A4B236 /* POCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCTests.swift; sourceTree = "<group>"; };
 		BFCFBE4F24F7962E00A4B236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCFBE5424F7962E00A4B236 /* POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCFBE5824F7962E00A4B236 /* POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCUITests.swift; sourceTree = "<group>"; };
@@ -78,14 +82,14 @@
 		BFCFBE7624F7AD0E00A4B236 /* DashboardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDataSource.swift; sourceTree = "<group>"; };
 		BFCFBE7824F7AD7A00A4B236 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BFCFBE7A24F7B73800A4B236 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		BFCFBE8024F7BACD00A4B236 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		BFCFBE8024F7BACD00A4B236 /* POCHttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCHttpClient.swift; sourceTree = "<group>"; };
 		BFCFBE8B24F7BD9100A4B236 /* ParserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserHelper.swift; sourceTree = "<group>"; };
 		BFCFBE8E24F7C03700A4B236 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BFCFBE9024F7C08700A4B236 /* ErrorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResult.swift; sourceTree = "<group>"; };
 		BFCFBE9224F7C0B600A4B236 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		BFCFBE9424F7C0E700A4B236 /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestFactory.swift; path = Request/RequestFactory.swift; sourceTree = "<group>"; };
 		BFCFBE9624F7C10700A4B236 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		BFCFBE9824F7C22D00A4B236 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		BFCFBE9824F7C22D00A4B236 /* POCServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = POCServiceManager.swift; sourceTree = "<group>"; };
 		BFCFBE9A24F7C27300A4B236 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestService.swift; path = Request/RequestService.swift; sourceTree = "<group>"; };
 		BFCFBE9E24F7E29D00A4B236 /* ServerEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerEndpoints.swift; sourceTree = "<group>"; };
 		BFCFBEA324F7F61500A4B236 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -178,9 +182,9 @@
 				BFCFBE6D24F7A43E00A4B236 /* Model */,
 				BFCFBE6624F797EA00A4B236 /* Views */,
 				BFCFBE3624F7962900A4B236 /* AppDelegate.swift */,
+				BFCFBE4424F7962E00A4B236 /* Info.plist */,
 				BFCFBE3F24F7962E00A4B236 /* Assets.xcassets */,
 				BFCFBE4124F7962E00A4B236 /* LaunchScreen.storyboard */,
-				BFCFBE4424F7962E00A4B236 /* Info.plist */,
 			);
 			path = POC;
 			sourceTree = "<group>";
@@ -188,8 +192,8 @@
 		BFCFBE4C24F7962E00A4B236 /* POCTests */ = {
 			isa = PBXGroup;
 			children = (
-				BFCFBE4D24F7962E00A4B236 /* POCTests.swift */,
 				BFCFBE4F24F7962E00A4B236 /* Info.plist */,
+				BF4A5A6F24F94196006672A6 /* DashboardViewModelTests.swift */,
 			);
 			path = POCTests;
 			sourceTree = "<group>";
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				BFCFBE6E24F7A45B00A4B236 /* CanadaInfomation.swift */,
+				BF4A5A7124F944C7006672A6 /* AboutCanada.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			children = (
 				BFCFBE7624F7AD0E00A4B236 /* DashboardDataSource.swift */,
 				BFCFBE7A24F7B73800A4B236 /* DashboardViewModel.swift */,
+				BF4A5A6D24F93FB2006672A6 /* AboutCanadaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,8 +261,8 @@
 				BFCFBE9A24F7C27300A4B236 /* RequestService.swift */,
 				BFCFBE9424F7C0E700A4B236 /* RequestFactory.swift */,
 				BFCFBE9224F7C0B600A4B236 /* Response.swift */,
-				BFCFBE8024F7BACD00A4B236 /* Network.swift */,
-				BFCFBE9824F7C22D00A4B236 /* ServiceManager.swift */,
+				BFCFBE8024F7BACD00A4B236 /* POCHttpClient.swift */,
+				BFCFBE9824F7C22D00A4B236 /* POCServiceManager.swift */,
 				BFCFBEA524F801F600A4B236 /* Loader.swift */,
 			);
 			path = Network;
@@ -526,15 +532,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCFBE8124F7BACD00A4B236 /* Network.swift in Sources */,
+				BFCFBE8124F7BACD00A4B236 /* POCHttpClient.swift in Sources */,
 				BFCFBE9B24F7C27300A4B236 /* RequestService.swift in Sources */,
 				BFCFBE9F24F7E29D00A4B236 /* ServerEndpoints.swift in Sources */,
 				BFCFBEA424F7F61500A4B236 /* BaseViewController.swift in Sources */,
 				BFCFBE7924F7AD7A00A4B236 /* DashboardViewController.swift in Sources */,
 				BFCFBE8F24F7C03700A4B236 /* Result.swift in Sources */,
 				BFCFBE7524F7AC8B00A4B236 /* DynamicValue.swift in Sources */,
+				BF4A5A7224F944C7006672A6 /* AboutCanada.swift in Sources */,
+				BF4A5A6E24F93FB2006672A6 /* AboutCanadaViewModel.swift in Sources */,
 				BFCFBEA624F801F600A4B236 /* Loader.swift in Sources */,
-				BFCFBE9924F7C22D00A4B236 /* ServiceManager.swift in Sources */,
+				BFCFBE9924F7C22D00A4B236 /* POCServiceManager.swift in Sources */,
 				BFCFBE9124F7C08700A4B236 /* ErrorResult.swift in Sources */,
 				BFCFBE9524F7C0E800A4B236 /* RequestFactory.swift in Sources */,
 				BFCFBE8C24F7BD9100A4B236 /* ParserHelper.swift in Sources */,
@@ -553,7 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFCFBE4E24F7962E00A4B236 /* POCTests.swift in Sources */,
+				BF4A5A7024F94196006672A6 /* DashboardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

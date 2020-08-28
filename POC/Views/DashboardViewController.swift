@@ -26,7 +26,7 @@ class DashboardViewController: BaseViewController {
         self.setUpTableView()
         self.registerCellOfTableView()
         self.updateListAfterNotification()
-        self.getSetValue()
+        self.getDatafromViewModel()
     }
     
     func setUpTableView() {
@@ -51,10 +51,12 @@ class DashboardViewController: BaseViewController {
         
     }
     
+    //Registering Tableview Cell
     func registerCellOfTableView() {
         infoTableView.register(InformationTableViewCell.self, forCellReuseIdentifier: "informationCell")
     }
     
+    //Update View when API call completed
     func updateListAfterNotification() {
         self.dataSource.data.addAndNotify(observer: self) { [weak self] _ in
             self?.navigationItem.title = self?.dashboardViewModel.title ?? ""
@@ -62,24 +64,34 @@ class DashboardViewController: BaseViewController {
         }
     }
 
-    func getSetValue() {
-          // add error handling example
-          self.dashboardViewModel.onErrorHandling = { [weak self] error in
-              // display error ?
-              let controller = UIAlertController(title: "An error occured", message: "Oops, something went wrong!", preferredStyle: .alert)
-              controller.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-              self?.present(controller, animated: true, completion: nil)
-          }
-          self.dashboardViewModel.fetchDashboardData()
-      }
+    //View Model api call
+    func getDatafromViewModel() {
+        // return error in this block 
+        self.dashboardViewModel.onErrorHandling = { [weak self] error in
+            self?.displayAlert("\((APIError.localizedDescription(.invalidResponse))())")
+            self?.infoTableView.reloadData()
+        }
+        if let reachability = Reachability(), !reachability.isReachable {
+            self.displayAlert("\((APIError.localizedDescription(.noInternetConnection))())")
+        }else{
+            self.dashboardViewModel.fetchDashboardData()
+        }
+    }
       
-      
+    //Pull to refresh Action
     @objc func refresh(sender:AnyObject) {
-        self.getSetValue()
+        
+        self.getDatafromViewModel()
         self.refreshControl.endRefreshing()
     }
     
-    
+    func displayAlert(_ message : String) {
+        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+  
 }
 
 extension DashboardViewController : UITableViewDelegate{

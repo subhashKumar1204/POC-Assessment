@@ -1,5 +1,5 @@
 //
-//  Network.swift
+//  POCHttpClient.swift
 //  POC
 //
 //  Created by SUBHASH KUMAR on 27/08/20.
@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-class Network {
+class POCHttpClient {
+    
     let apiResource: APIResource!
     let decoder = JSONDecoder()
     
@@ -17,15 +18,22 @@ class Network {
         self.apiResource = resource
     }
     
-    func sendRequest<T: Decodable>(completion: APICompletion<T>?)
-    {
-        let url = URL(string: apiResource.urlString)!
+    
+    func sendRequest<T: Decodable>(completion: APICompletion<T>?) {
+       
+        guard let url = URL(string: apiResource.urlString) else {
+            Loader.dismissLoader()
+            let alertController = UIAlertController(title: "Alert", message: "Problem with network request URL. please try later", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            }))
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.window?.rootViewController?.present(alertController, animated: true, completion: nil)
+            
+            return
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = self.apiResource.method.rawValue
-        
-        if let reachability = Reachability(), !reachability.isReachable {
-            request.cachePolicy = .returnCacheDataDontLoad
-        }
         
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
@@ -39,8 +47,9 @@ class Network {
                     DispatchQueue.main.async {
                         completion?(result)
                     }
+                }else {
+                    Loader.dismissLoader()
                 }
-                
             } catch {
             }
         }

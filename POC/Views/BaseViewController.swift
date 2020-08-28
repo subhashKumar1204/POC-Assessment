@@ -16,6 +16,7 @@ class BaseViewController: UIViewController {
         setUpNavigation()
     }
   
+    //setting up the Navigation bar color
     func setUpNavigation() {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 168/255, green: 78/255, blue: 84/255, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false

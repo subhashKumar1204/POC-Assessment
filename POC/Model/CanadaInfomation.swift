@@ -19,17 +19,3 @@ struct CanadaInfomation: Codable {
     }
 }
 
-
-struct AboutCanada: Codable {
-    
-    let title: String?
-    let description: String?
-    let imageUrl: String?
-    
-    
-    private enum CodingKeys: String, CodingKey {
-        case title
-        case description
-        case imageUrl = "imageHref"
-    }
-}

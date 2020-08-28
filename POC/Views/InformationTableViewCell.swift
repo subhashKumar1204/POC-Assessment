@@ -12,29 +12,11 @@ import SDWebImage
 
 class InformationTableViewCell: UITableViewCell {
     
-    var aboutCanada:AboutCanada? {
+    var aboutCanadaViewModel : AboutCanadaViewModel! {
         didSet {
-            guard let canadaInfoItem = aboutCanada else {return}
-            
-            if let infoTitle = canadaInfoItem.title {
-                titleLabel.text = infoTitle
-            }
-            else{
-                titleLabel.text = ""
-            }
-            
-            if let description = canadaInfoItem.description {
-                descriptionLabel.text = "\(description)"
-            }else{
-                descriptionLabel.text = ""
-            }
-            
-            if let profileImageUrl = canadaInfoItem.imageUrl {
-                profileImageView.sd_setImage(with: URL(string: profileImageUrl), placeholderImage: UIImage(named: "placeholder.png"))
-                
-            }else{
-                profileImageView.image = UIImage(named: "placeholder.png")
-            }
+            titleLabel.text = aboutCanadaViewModel.title
+            descriptionLabel.text = aboutCanadaViewModel.description
+            profileImageView.sd_setImage(with: URL(string: aboutCanadaViewModel.imageUrl), placeholderImage: UIImage(named: "placeholder.png"))
         }
     }
     
@@ -56,7 +38,11 @@ class InformationTableViewCell: UITableViewCell {
     
     let titleLabel:UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            label.font = UIFont.boldSystemFont(ofSize: 22)
+        }else{
+            label.font = UIFont.boldSystemFont(ofSize: 18)
+        }
         label.textColor = .black
         label.backgroundColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -68,7 +54,11 @@ class InformationTableViewCell: UITableViewCell {
     
     let descriptionLabel:UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 14)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            label.font = UIFont.boldSystemFont(ofSize: 18)
+        }else{
+            label.font = UIFont.boldSystemFont(ofSize: 14)
+        }
         label.textColor =  .gray
         label.backgroundColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +83,7 @@ class InformationTableViewCell: UITableViewCell {
         profileImageView.heightAnchor.constraint(equalToConstant:CGFloat(Constants.imageDimesion)).isActive = true
         
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant:10).isActive = true
+        containerView.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant:15).isActive = true
         containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
         containerView.bottomAnchor.constraint(equalTo:self.contentView.bottomAnchor, constant: -5).isActive = true
         

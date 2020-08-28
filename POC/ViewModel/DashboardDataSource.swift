@@ -13,11 +13,7 @@ class GenericDataSource<T> : NSObject {
     var data: DynamicValue<[T]> = DynamicValue([])
 }
 
-class DashboardDataSource : GenericDataSource<AboutCanada>, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+class DashboardDataSource : GenericDataSource<AboutCanadaViewModel>, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.value.count
@@ -28,11 +24,9 @@ class DashboardDataSource : GenericDataSource<AboutCanada>, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
         cell.selectionStyle = .none
         let canadaItem = self.data.value[indexPath.row]
-        cell.aboutCanada = canadaItem
+        cell.aboutCanadaViewModel = canadaItem
 
         return cell
     }
-    
-
 }
 

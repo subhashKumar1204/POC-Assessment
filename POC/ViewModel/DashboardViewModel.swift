@@ -10,22 +10,29 @@ import Foundation
 
 class DashboardViewModel {
     
-    weak var dataSource : GenericDataSource<AboutCanada>?
+    weak var dataSource : GenericDataSource<AboutCanadaViewModel>?
     var onErrorHandling : ((APIError?) -> Void)?
     var title : String?
     
-    init(dataSource : GenericDataSource<AboutCanada>?) {
+    init(dataSource : GenericDataSource<AboutCanadaViewModel>?) {
         self.dataSource = dataSource
     }
     
     //RequestService to fetch dashboard data
     func fetchDashboardData()  {
         Loader.showLoader()
-        ServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+       
+        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+            
             switch result {
             case let .success(response):
                 self.title = response.data?.title ?? ""
-                self.dataSource?.data.value = (response.data?.rows)!
+                if let informations = (response.data?.rows) {
+                    self.dataSource?.data.value  = informations.map({return AboutCanadaViewModel(canadaInfo: $0)})
+                }
+                else{
+                    self.dataSource?.data.value = []
+                }
                 Loader.dismissLoader()
 
             case .failure:

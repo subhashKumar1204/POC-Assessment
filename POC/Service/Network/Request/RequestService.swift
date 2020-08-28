@@ -21,7 +21,7 @@ class RequestService {
         }
         
         let resource = APIResource(URLString: url, method: method)
-        return Network(resource: resource).sendRequest(completion: handler)
+        return POCHttpClient(resource: resource).sendRequest(completion: handler)
     }
     
 }
