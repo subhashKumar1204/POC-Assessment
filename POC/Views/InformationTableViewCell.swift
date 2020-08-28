@@ -76,6 +76,8 @@ class InformationTableViewCell: UITableViewCell {
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
         self.contentView.addSubview(containerView)
+        self.contentView.backgroundColor = .white
+        self.accessibilityIdentifier = "InfoTableViewcell"
         
         profileImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         profileImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true

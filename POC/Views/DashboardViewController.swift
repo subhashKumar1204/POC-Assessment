@@ -42,11 +42,10 @@ class DashboardViewController: BaseViewController {
         infoTableView.delegate = self
         infoTableView.tableFooterView = UIView(frame: CGRect.zero)
         infoTableView.rowHeight = UITableView.automaticDimension
-        
+        infoTableView.backgroundColor = .white
+        infoTableView.accessibilityIdentifier = "DashboardInfoTableView"
         refreshControl.attributedTitle = NSAttributedString(string:Constants.pullToRefresh )
-        
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        
         infoTableView.addSubview(refreshControl) // not required when using UITableViewController
         
     }
@@ -66,7 +65,7 @@ class DashboardViewController: BaseViewController {
 
     //View Model api call
     func getDatafromViewModel() {
-        // return error in this block 
+        // return error in this block
         self.dashboardViewModel.onErrorHandling = { [weak self] error in
             self?.displayAlert("\((APIError.localizedDescription(.invalidResponse))())")
             self?.infoTableView.reloadData()
