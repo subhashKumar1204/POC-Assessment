@@ -20,15 +20,15 @@ public enum APIError: Error {
     func localizedDescription() -> String {
         switch self {
         case .noInternetConnection:
-            return "Sorry we are unable to connect the server. Please check your network connection"
+            return StringConstants.NoInternetConnection
         case .invalidRequest:
-            return "Problem with network request. Please try later"
+            return StringConstants.InvalidRequest
         case .parsingError:
-            return "Unable to parse the server response. Please try later"
+            return StringConstants.parsingError
         case .invalidURL:
-                return "Problem with network request URL. Please try later"
+                return StringConstants.InvalidURL
         default:
-            return "Something went wrong. Please try later"
+            return StringConstants.defaultString
         }
     }
     
@@ -40,7 +40,6 @@ public enum APIError: Error {
             return 0
         case .parsingError:
             return 0
-            
         default:
             return 0
         }

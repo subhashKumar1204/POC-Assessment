@@ -23,12 +23,7 @@ class POCHttpClient {
        
         guard let url = URL(string: apiResource.urlString) else {
             Loader.dismissLoader()
-            let alertController = UIAlertController(title: "Alert", message: "Problem with network request URL. please try later", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
-            }))
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.window?.rootViewController?.present(alertController, animated: true, completion: nil)
-            
+            Utils.displayAlert(message: StringConstants.NetworkConnectionIssue, view: nil)
             return
         }
         

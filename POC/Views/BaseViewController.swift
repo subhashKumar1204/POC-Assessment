@@ -12,16 +12,15 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = AppColor.appBackgroundWhiteColor
         setUpNavigation()
     }
   
     //setting up the Navigation bar color
     func setUpNavigation() {
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 168/255, green: 78/255, blue: 84/255, alpha: 1)
+        self.navigationController?.navigationBar.barTintColor = AppColor.NavigationColors.navigationBarColors
         self.navigationController?.navigationBar.isTranslucent = false
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor(red: 1, green: 1, blue: 1, alpha: 1)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:AppColor.NavigationColors.navigationBarTitleColors]
     }
     
     

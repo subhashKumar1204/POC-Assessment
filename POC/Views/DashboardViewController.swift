@@ -43,8 +43,8 @@ class DashboardViewController: BaseViewController {
         infoTableView.tableFooterView = UIView(frame: CGRect.zero)
         infoTableView.rowHeight = UITableView.automaticDimension
         infoTableView.backgroundColor = .white
-        infoTableView.accessibilityIdentifier = "DashboardInfoTableView"
-        refreshControl.attributedTitle = NSAttributedString(string:Constants.pullToRefresh )
+        infoTableView.accessibilityIdentifier = DashboardViewController.self.AccessibilityId.tableViewId
+        refreshControl.attributedTitle = NSAttributedString(string:StringConstants.pullToRefresh )
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         infoTableView.addSubview(refreshControl) // not required when using UITableViewController
         
@@ -52,7 +52,7 @@ class DashboardViewController: BaseViewController {
     
     //Registering Tableview Cell
     func registerCellOfTableView() {
-        infoTableView.register(InformationTableViewCell.self, forCellReuseIdentifier: "informationCell")
+        infoTableView.register(InformationTableViewCell.self, forCellReuseIdentifier: InformationTableViewCell.self.AccessibilityId.cellId)
     }
     
     //Update View when API call completed
@@ -67,11 +67,11 @@ class DashboardViewController: BaseViewController {
     func getDatafromViewModel() {
         // return error in this block
         self.dashboardViewModel.onErrorHandling = { [weak self] error in
-            self?.displayAlert("\((APIError.localizedDescription(.invalidResponse))())")
+            Utils.displayAlert(message: "\((APIError.localizedDescription(.invalidResponse))())", view: self)
             self?.infoTableView.reloadData()
         }
         if let reachability = Reachability(), !reachability.isReachable {
-            self.displayAlert("\((APIError.localizedDescription(.noInternetConnection))())")
+            Utils.displayAlert(message: "\((APIError.localizedDescription(.noInternetConnection))())", view: self)
         }else{
             self.dashboardViewModel.fetchDashboardData()
         }
@@ -79,18 +79,16 @@ class DashboardViewController: BaseViewController {
       
     //Pull to refresh Action
     @objc func refresh(sender:AnyObject) {
-        
         self.getDatafromViewModel()
         self.refreshControl.endRefreshing()
     }
-    
-    func displayAlert(_ message : String) {
-        let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
-        }))
-        self.present(alertController, animated: true, completion: nil)
-    }
-  
+ 
+}
+
+extension DashboardViewController {
+  public struct AccessibilityId {
+    public static let tableViewId = StringConstants.DashboardInfoTableView
+  }
 }
 
 extension DashboardViewController : UITableViewDelegate{

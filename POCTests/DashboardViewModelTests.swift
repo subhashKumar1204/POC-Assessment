@@ -22,13 +22,13 @@ class DashboardViewModelTests: XCTestCase {
     //Mock test for Dashboard Expected URL
     func testDashboardExpectedApiURL() {
         
-        XCTAssertEqual(Constants.expectedUrlForTest, ServerEndpoints.shared.DashboardFileEndPoint)
+        XCTAssertEqual(StringConstants.expectedStringForTest, ServerEndpoints.shared.DashboardFileEndPoint)
     }
     
     //Mock test for Dashboard API success response
     func testDashboardApiOnSuccessReponse() {
         
-        let dashboardResponseExpectation = self.expectation(description: "Dashboard API will return the success response")
+        let dashboardResponseExpectation = self.expectation(description: StringConstants.DashboardAPISuccess)
         
         POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             
@@ -42,13 +42,13 @@ class DashboardViewModelTests: XCTestCase {
                 break
             }
         }
-        self.waitForExpectations(timeout: 20.0, handler: nil)
+        self.waitForExpectations(timeout: timeoutForApi, handler: nil)
     }
     
     //Mock test for Dashboard API success response to return List
     func testDashboardApiOnSuccessReturnsList() {
         
-        let dashboardResponseListExpectation = self.expectation(description: "Dashboard API will returns the list of information")
+        let dashboardResponseListExpectation = self.expectation(description: StringConstants.DashboardAPIResponseList)
         
         POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             
@@ -62,13 +62,13 @@ class DashboardViewModelTests: XCTestCase {
                 }
             }
         }
-        self.waitForExpectations(timeout: 20.0, handler: nil)
+        self.waitForExpectations(timeout: timeoutForApi, handler: nil)
     }
     
     //Mock test for Dashboard API success return Title For NavigationBar
     func testDashboardApiOnSuccessReturnsTitleForNavigationBar() {
         
-        let dashboardResponseListExpectation = self.expectation(description: "Dashboard API will return Title For NavigationBar")
+        let dashboardResponseListExpectation = self.expectation(description: StringConstants.DashboardAPIReturnNavigationBar)
         
         POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             //on success return list
@@ -80,13 +80,13 @@ class DashboardViewModelTests: XCTestCase {
                 }
             }
         }
-        self.waitForExpectations(timeout: 20.0, handler: nil)
+        self.waitForExpectations(timeout: timeoutForApi, handler: nil)
     }
     
     //Mock test for AboutCanadaModelView
     func testAboutCanadaViewModel() {
         
-        let aboutCanada = AboutCanada(title: "Canada", description: "Canada Information", imageUrl: "")
+        let aboutCanada = AboutCanada(title: StringConstants.placeTitle, description: StringConstants.placeTitleInformation, imageUrl: "")
         let canadaViewModel =  AboutCanadaViewModel(canadaInfo: aboutCanada)
         
         //What we want to test

@@ -21,7 +21,7 @@ class DashboardDataSource : GenericDataSource<AboutCanadaViewModel>, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "informationCell", for: indexPath) as! InformationTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: InformationTableViewCell.self.AccessibilityId.cellId, for: indexPath) as! InformationTableViewCell
         cell.selectionStyle = .none
         let canadaItem = self.data.value[indexPath.row]
         cell.aboutCanadaViewModel = canadaItem
