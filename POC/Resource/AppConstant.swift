@@ -26,9 +26,7 @@ let CircledImage = imageDimesion/2
 let timeoutForApi = 20.0
 
 
-
-
-//AppFonts
+//MARK:- AppFonts
 struct AppFonts {
     
     static func appTitleFont() -> UIFont {
@@ -48,7 +46,7 @@ struct AppFonts {
     }
 }
 
-// Color Constant
+//MARK:- Color Constant
 struct AppColor {
     
     private struct Alphas {

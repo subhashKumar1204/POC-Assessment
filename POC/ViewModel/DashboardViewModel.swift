@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DashboardViewModel {
     
@@ -19,9 +20,11 @@ class DashboardViewModel {
     }
     
     //Request Service to fetch dashboard data
-    func fetchDashboardData()  {
-        Loader.showLoader()
-        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { [weak self] result in
+    func fetchDashboardData(view : UIView)  {
+        
+        Utils().showHUD(progressLabel: StringConstants.Loading, view: view)
+        let serviceManager = POCServiceManager()
+        serviceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { [weak self] result in
             
             switch result {
             case let .success(response):
@@ -32,9 +35,10 @@ class DashboardViewModel {
                 else{
                     self?.dataSource?.data.value = []
                 }
-                Loader.dismissLoader()
-
+                Utils().dismissHUD(isAnimated: true, view: view)
+            
             case .failure:
+                Utils().dismissHUD(isAnimated: true, view: view)
                 self?.onErrorHandling?(APIError.invalidResponse)
                 break
             }

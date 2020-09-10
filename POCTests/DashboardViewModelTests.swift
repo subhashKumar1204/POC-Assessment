@@ -11,13 +11,9 @@ import XCTest
 
 class DashboardViewModelTests: XCTestCase {
     
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    // Initializing MockPOCServiceManager for Mocking Local Json file
+    // If we need to check the real API client then we have to initialize the POCServiceManager
+    let dashboardServiceManager = MockPOCServiceManager()
     
     //Mock test for Dashboard Expected URL
     func testDashboardExpectedApiURL() {
@@ -30,7 +26,7 @@ class DashboardViewModelTests: XCTestCase {
         
         let dashboardResponseExpectation = self.expectation(description: StringConstants.DashboardAPISuccess)
         
-        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+        dashboardServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             
             switch result {
             case .success(_):
@@ -50,7 +46,7 @@ class DashboardViewModelTests: XCTestCase {
         
         let dashboardResponseListExpectation = self.expectation(description: StringConstants.DashboardAPIResponseList)
         
-        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+        dashboardServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             
             //on success return list
             if let canadaInformation = result.response {
@@ -70,7 +66,7 @@ class DashboardViewModelTests: XCTestCase {
         
         let dashboardResponseListExpectation = self.expectation(description: StringConstants.DashboardAPIReturnNavigationBar)
         
-        POCServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
+        dashboardServiceManager.fetchDashboardInformation(url: ServerEndpoints.shared.DashboardFileEndPoint) { result in
             //on success return list
             if let canadaInformation = result.response {
                 let navigationTitle = canadaInformation.data?.title

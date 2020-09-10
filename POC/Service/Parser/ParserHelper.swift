@@ -10,7 +10,7 @@ import Foundation
 
  class ParserHelper {
      
-     // Parse Json From File
+     //MARK:- Parse Json From File
      static func parseJsonDataFromFile<T: Decodable>(data: Data?, error: Error?, responseData: URLResponse? = nil) throws -> APIResponse<T> {
          var parsedModel: APIResponse<T>
          var responseObject: T?, parseError: APIError?

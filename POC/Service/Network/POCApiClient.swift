@@ -1,5 +1,5 @@
 //
-//  POCHttpClient.swift
+//  POCApiClient.swift
 //  POC
 //
 //  Created by SUBHASH KUMAR on 27/08/20.
@@ -13,23 +13,10 @@ class POCApiClient {
     
     var apiResource: APIResource! = nil
     let decoder = JSONDecoder()
-
-    func fetchDashboardInformation<T: Decodable>(url: String?, method: RequestMethod , handler: (APICompletion<T>)? = nil) {
-        guard let url = url else {
-            handler?(DataResult.failure(APIError.invalidRequest))
-            return
-        }
-        
-        let resource = APIResource(URLString: url, method: method)
-        self.apiResource = resource
-        return self.sendRequest(completion: handler)
-    }
-    
     
     private func sendRequest<T: Decodable>(completion: APICompletion<T>?) {
-       
+        
         guard let url = URL(string: apiResource.urlString) else {
-            Loader.dismissLoader()
             Utils.displayAlert(message: StringConstants.NetworkConnectionIssue, view: nil)
             return
         }
@@ -49,8 +36,6 @@ class POCApiClient {
                     DispatchQueue.main.async {
                         completion?(result)
                     }
-                }else {
-                    Loader.dismissLoader()
                 }
             } catch {
             }
@@ -58,5 +43,23 @@ class POCApiClient {
         task.resume()
         
     }
+}
+
+//MARK:- Protocol to wrap API client class
+extension POCApiClient: POCApiClientProtocol {
+  
+    func fetchDashboardInformation<T: Decodable>(url: String?, handler: @escaping ((DataResult<T>) -> Void)) {
+        guard let url = url else {
+            handler(DataResult.failure(APIError.invalidRequest))
+            return
+        }
+        
+        let method = RequestMethod.get
+        let resource = APIResource(URLString: url, method: method)
+        self.apiResource = resource
+        
+        return self.sendRequest(completion: handler.self)
+    }
+    
     
 }

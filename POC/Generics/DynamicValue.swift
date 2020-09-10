@@ -28,6 +28,7 @@ class DynamicValue<T> {
         observers[observer.description] = completionHandler
     }
     
+    //MARK:- Notify the view for update
     public func addAndNotify(observer: NSObject, completionHandler: @escaping CompletionHandler) {
         self.addObserver(observer, completionHandler: completionHandler)
         self.notify()

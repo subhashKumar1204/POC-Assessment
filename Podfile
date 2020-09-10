@@ -8,8 +8,7 @@ target 'POC' do
   # Pods for POC
 
   pod 'SDWebImage'
-  pod 'SVProgressHUD'
-
+  pod 'MBProgressHUD', '~> 1.2.0'
 
 
   target 'POCTests' do

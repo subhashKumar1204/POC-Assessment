@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import UIKit
 
-class POCServiceManager {
+class POCServiceManager : POCServiceManagerProtocol {
     
-    class func fetchDashboardInformation(url: String?, handler: (APICompletion<CanadaInfomation>)? = nil) {
-        RequestService.getRequest(url: url , handler: handler)
+    func fetchDashboardInformation(url: String?, handler: @escaping ((DataResult<CanadaInfomation>) -> Void)) {
+        POCApiClient().fetchDashboardInformation(url: url, handler: handler)
     }
 }

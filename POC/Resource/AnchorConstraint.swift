@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// InformationCell anchor constant
+//MARK:- InformationCell anchor constant
 struct InformationCellAnchorConstant {
     
     static let profileImageViewLeadingAnchor: CGFloat = 10

@@ -46,7 +46,7 @@ class DashboardViewController: BaseViewController {
         infoTableView.accessibilityIdentifier = DashboardViewController.self.AccessibilityId.tableViewId
         refreshControl.attributedTitle = NSAttributedString(string:StringConstants.pullToRefresh )
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        infoTableView.addSubview(refreshControl) // not required when using UITableViewController
+        infoTableView.addSubview(refreshControl)
         
     }
     
@@ -63,7 +63,7 @@ class DashboardViewController: BaseViewController {
         }
     }
 
-    //View Model api call
+    //View Model Api call
     func getDatafromViewModel() {
         // return error in this block
         self.dashboardViewModel.onErrorHandling = { [weak self] error in
@@ -73,7 +73,7 @@ class DashboardViewController: BaseViewController {
         if let reachability = Reachability(), !reachability.isReachable {
             Utils.displayAlert(message: "\((APIError.localizedDescription(.noInternetConnection))())", view: self)
         }else{
-            self.dashboardViewModel.fetchDashboardData()
+            self.dashboardViewModel.fetchDashboardData(view: self.view)
         }
     }
       

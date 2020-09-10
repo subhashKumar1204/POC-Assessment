@@ -15,7 +15,9 @@ struct StringConstants {
     static let Placeholder =        "placeholder.png"
     static let Alert =              "Alert"
     static let OK =                 "OK"
-    
+    static let Loading =            "Loading"
+    static let JsonFileName =       "facts"
+    static let JsonExtension =      "json"
     static let NetworkConnectionIssue = "Problem with network request URL. please try later"
     static let InvalidRequest = NetworkConnectionIssue
     static let InvalidURL = NetworkConnectionIssue
@@ -32,7 +34,7 @@ struct StringConstants {
     static let placeTitleInformation = "Canada Information"
     
     static let InfoTableViewcell =                 "InfoTableViewcell"
-    static let DashboardInfoTableView =              "DashboardInfoTableView"
+    static let DashboardInfoTableView =             "DashboardInfoTableView"
     
 }
 
